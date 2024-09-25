@@ -21,16 +21,14 @@ def convert(s):
         
         if minute_fin!= None and int(minute_fin) > 59:
             raise ValueError
+        
+        hour_start = int(hour_start)
+        if meridiem_start == 'PM' and hour_start != 12:
+            hour_start = hour_start + 12
 
-        if meridiem_start == 'PM':
-            hour_start = int(hour_start) + 12
-        else:
-            hour_start = int(hour_start)
-
-        if meridiem_fin == 'PM':
-            hour_fin = int(hour_fin) + 12
-        else:
-            hour_fin = int(hour_fin)
+        hour_fin = int(hour_fin)
+        if meridiem_fin == 'PM' and hour_fin != 12:
+            hour_fin = hour_fin + 12
 
         if minute_strart == None:
             minute_strart = '0'
