@@ -38,6 +38,12 @@ def convert(s):
         if minute_fin == None:
             minute_fin = '0'
 
+        if hour_start == 12 and meridiem_start == 'AM':
+            hour_start = 0
+        
+        if hour_fin == 12 and meridiem_fin == 'AM':
+            hour_fin = 0
+
         minute_strart = int(minute_strart)
         minute_fin = int(minute_fin)
 

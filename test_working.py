@@ -45,4 +45,8 @@ def test_invalid_hour():
     with pytest.raises(ValueError):
         convert(hora)
 
-        
+def test_hour_12AM():
+    hora = '12:00 AM to 5:00 PM'
+    assert convert(hora) == '00:00 to 17:00'
+    hora = '9:00 PM to 12:00 AM'
+    assert convert(hora) == '21:00 to 00:00'     
